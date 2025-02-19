@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://kevincroake.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://kevincroake.com/" rel="alternate" type="text/html" /><updated>2024-11-29T10:19:33-05:00</updated><id>http://kevincroake.com/feed.xml</id><title type="html">Kev Croake | An Enjoyer</title><subtitle>Kev is a web designer, developer, father, husband, and philiosopher of nonsense currently based out of New England. Its getting cold here now.</subtitle><entry><title type="html">Well lets give this a shot</title><link href="http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot.html" rel="alternate" type="text/html" title="Well lets give this a shot" /><published>2024-11-27T22:50:41-05:00</published><updated>2024-11-27T22:50:41-05:00</updated><id>http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot</id><content type="html" xml:base="http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot.html"><![CDATA[<h2 id="heres-to-hope-post-graduation-and-the-americone-blog-dream">Here’s to Hope Post Graduation and the Americone Blog Dream</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://kevincroake.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://kevincroake.com/" rel="alternate" type="text/html" /><updated>2025-02-19T00:29:08-05:00</updated><id>http://kevincroake.com/feed.xml</id><title type="html">Kev Croake | An Enjoyer</title><subtitle>Kev is a web designer, developer, father, husband, and philiosopher of nonsense currently based out of New England. Its getting cold here now.</subtitle><entry><title type="html">Advent of Code Day 1</title><link href="http://kevincroake.com/2025/02/19/advent-of-code-day-1.html" rel="alternate" type="text/html" title="Advent of Code Day 1" /><published>2025-02-19T00:15:43-05:00</published><updated>2025-02-19T00:15:43-05:00</updated><id>http://kevincroake.com/2025/02/19/advent-of-code-day-1</id><content type="html" xml:base="http://kevincroake.com/2025/02/19/advent-of-code-day-1.html"><![CDATA[<p>I’m not really great at doing challenges at the time you’re supposed to. I find the pressure not fun so I wait and use them as prompts for practice later.</p>
+
+<p>Anyways heres my advent of code solution in ruby. I’m not 100% sure its the best but its just how my brain works. When it comes to programming I’m kinda a brute FORce loop kinda guy. First I created the function with a smaller set of sample code provide. It was like 2 list with like 6 entries each.</p>
+
+<p>Since both lists are going to be matching in size I don’t need to worry about too much with double loops. Instead I looped once, grabbed the position of the current item and applied that index to the second list. Compared which is larger and created the arithmetic that way.</p>
+
+<p>There probably is a less complicated solution but I’m not to worried about it because it got me the right answer. It did the job.</p>
+
+<pre>
+	data = File.open('counts.txt', 'r')
+	list1 = []
+	list2 = []
+	data.readlines.each do |line|
+		list1.append(line.split()[0])
+		list2.append(line.split()[1])
+	end
+	
+	list1 = list1.sort()
+	list2 = list2.sort()
+	distance = []
+	i = 0
+	for li in list1 do
+		x = li.to_i
+		y = list2[i].to_i
+		if x &gt; y
+			distance.append(x - y)
+		else 
+			distance.append(y - x)
+		end
+		i += 1
+	end
+	print(distance.sum)
+	
+</pre>]]></content><author><name></name></author><summary type="html"><![CDATA[I’m not really great at doing challenges at the time you’re supposed to. I find the pressure not fun so I wait and use them as prompts for practice later.]]></summary></entry><entry><title type="html">Well lets give this a shot</title><link href="http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot.html" rel="alternate" type="text/html" title="Well lets give this a shot" /><published>2024-11-27T22:50:41-05:00</published><updated>2024-11-27T22:50:41-05:00</updated><id>http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot</id><content type="html" xml:base="http://kevincroake.com/2024/11/27/well-lets-give-this-a-shot.html"><![CDATA[<h2 id="heres-to-hope-post-graduation-and-the-americone-blog-dream">Here’s to Hope Post Graduation and the Americone Blog Dream</h2>
 
 <p>Here’s the hope, may she springs eternal and I actually update this site. It may sound weird but I’ve always been scared of my website. At least maintaining it and coming up with a design. This mentality put me into a forever procrastination cycle of self worth. Here’s that story.</p>
 
@@ -14,12 +47,12 @@
 
 <p>I took the next few months learning Wordpress. I was becoming pretty well versed in Advanced Custom Fields, Gravity Forms, and the power of WP_Query. I even built a few custom plugins for specific client needs. Nothing crazy but stuff like grabbing API data and formatting into posts. Around this time I started building my own custom Wordpress theme for myself and it was daunting. The process itself wasn’t too bad but keeping up with so many pieces that needed to be built was. I wanted to do it “right” and have a folder for my includes within that a folder for my includes includes and etc. Because you know, atomic design was the beezzz knees at the time. On top of that I was gonna use SCSS so I needed to run that crap locally in theme folder to preview it all.</p>
 
-<p>While I was toying with this set up I was already losing interest in Wordpress. It had too many moving pieces for me and I wanted to scale down. I was in databases, apache, and all this other stuff that was getting in the way of working on the actual website. Thats when I discovered static site generators and my mind was blown. Just run some command line to generate a whole site based on markdown and liquid templating language. It was perfect for my needs. So now I had to learn that. Threw my wordpress theme that I spent like idk 20hrs on into the trash. Something new was here and I had to learn it.</p>
+<p>While I was toying with this set up I was already losing interest in Wordpress. It had too many moving pieces for me and I wanted to scale down. I was in databases, apache, and all this other stuff that was getting in the way of working on the actual website. Thats when I discovered static site generators and my mind was blown. Just run some command line to generate a whole site based on markdown and liquid templating language. It was perfect for my needs. So now I had to learn that. Threw my Wordpress theme that I spent like idk 20hrs on into the trash. Something new was here and I had to learn it.</p>
 
-<p>After a few moments of fiddling with outdated ruby and gems I was up and running. I remember my first site I build with this was a small little short story site. It was a little trial run with some gothic themes of bats and spooky textures. But this was the test site to figure out how to build my portfolio. Next was figuring out custom post types in jekyll and custom layouts for my projects. But before I could do this I needed a design.</p>
+<p>After a few moments of fiddling with outdated ruby and gems I was up and running. I remember my first site I build with this was a small little short story site. It was a little trial run with some gothic themes of bats and spooky textures. But this was the test site to figure out how to build my portfolio. Next was figuring out custom post types in Jekyll and custom layouts for my projects. But before I could do this I needed a design.</p>
 
 <h3 id="photoshopping-out-the-self-doubt">Photoshopping out the Self Doubt</h3>
-<p>After I told myself I was going to learn Wordpress, then jekyll, and probably something else I also knew I had to update my design. When I did my first post college design I grabbed all the tools and tricks that were crutches for me. At the time I still didn’t feel confidant in my design. I always felt like I’m 30 years behind everyone else. I may be like the same age or younger then my colleagues but I felt like an old guy in a college class learning about the humanities for the first or a baby who just got object permanence.</p>
+<p>After I told myself I was going to learn Wordpress, then Jekyll, and probably something else I also knew I had to update my design. When I did my first post college design I grabbed all the tools and tricks that were crutches for me. At the time I still didn’t feel confidant in my design. I always felt like I’m 30 years behind everyone else. I may be like the same age or younger then my colleagues but I felt like an old guy in a college class learning about the humanities for the first or a baby who just got object permanence.</p>
 
 <p>Which is a weird thing to think about myself. I was doing multiple designs for client every week. Some better and worse than others but I was designing and getting better by leagues with each one. But this was my name on a website so it needed to be perfect. This is how I was going to get jobs, this is how I was going to show off my skills that I’ve acquired.</p>
 
